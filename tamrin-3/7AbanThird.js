@@ -1,21 +1,14 @@
 function gameTime(a, b, n, entry) {
-    let arrFirst = []
-    let arrSecond = []
-    for (let i = 0; i <= 90 + b; i++) {
-        if (i <= 45 + a) {
-            arrFirst.push(i)
-        } else if (i > 45+a && i<=95+b) {
-            arrSecond.push(i)
-        }
+    if ((entry[n-1]) > 90 + b || (entry[0]) < 0) {
+        return false
     }
     for (let j = 1; j <= n; j++) {
-        if ((arrFirst.includes(entry[j - 1])) || (arrSecond.includes(entry[j - 1]))) {
-            return "1"
+        if (entry[j - 1] + a < entry[j - 2]) {
+            return false
         }
     }
-    return "2"
+    return true
 }
-
 
 const testOne = gameTime(2, 4, 4, [4, 45, 48, 93])//true
 const testTwo = gameTime(3, 2, 5, [4, 47, 45, 80, 91])//true
