@@ -1,9 +1,5 @@
 function gameTime(a, b, n, entry) {
-    // if (entry[0] <= 0 || entry[entry.length - 1] > 90 + b) return 'no'
-    // for (let i = 0; i < entry.length; i++) {
-    //     if (entry[i] + a < entry[i - 1]) return 'no'
-    // }
-    // return 'yes'
+
     let arrFirst = []
     let arrSecond = []
     for (let i = 0; i <= 90 + b; i++) {
