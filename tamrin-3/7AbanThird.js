@@ -1,5 +1,4 @@
 function gameTime(a, b, n, entry) {
-
     let arrFirst = []
     let arrSecond = []
     for (let i = 0; i <= 90 + b; i++) {
