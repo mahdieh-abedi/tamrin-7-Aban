@@ -1,21 +1,23 @@
-const arr = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l","m", "n", "o", "p", "q", "r", "s", "t", "u","v", "w", "x", "y", "z"]
-function codingAnString(n,k,str) {
-    let str1
-    let str2
-        for (let i = 0; i <= k; i++) {
-            str1 = str.slice(n - 1, n) + str.slice(0, n - 1)
-            for(let j=0; j<=25;j++){
-                for(let char of str1){
-                    Number(char)++
-                }
-
+function codingAnString(n, k, str) {
+    let str1 = '';
+    for (let i = 0; i < k; i++) {
+        str = str.substring(n - 1, n) + str.substring(0, n - 1)
+        for (let j = 0; j < n; j++) {
+            if (str[j] === 'z') {
+                str1 = str1 + 'a'
+            } else {
+                str1 = str1 + String.fromCharCode(str.charCodeAt(j) + 1);
             }
-
         }
-        return str2
+        str = str1;
+        str1 = '';
     }
+    return str;
+
+}
 
 
-
-const testOne = codingAnString(3, 1,"abz")
+const testOne = codingAnString(3, 1, "abz")
+const testTwo = codingAnString(4, 5, "abcd")
 console.log(testOne)
+console.log(testTwo)
